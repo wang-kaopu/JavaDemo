@@ -3,7 +3,6 @@ package com.wkp;
 public class ball {
     private int number;
     private String color;
-
     public ball(int number, String color) {
         this.number = number;
         this.color = color;

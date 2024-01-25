@@ -7,15 +7,21 @@ import java.util.Scanner;
 public class test {
     public static void main(String[] args) {
         Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+
         //1.生成随机球
         ArrayList<ball> balls = new ArrayList<>();
         for (int i = 0 ; i < 6; i++){
-            balls.add(new ball(random.nextInt(1,31), "Red"));
+            int r = random.nextInt(100);
+            if(r<5){
+                balls.add(new ball(30,"Red"));
+            }else{
+                balls.add(new ball(random.nextInt(1,30), "Red"));
+            }
         }
         balls.add(new ball(random.nextInt(1,31),"Blue"));
 
         //2.输入抽到的双色球号码
-        Scanner scanner = new Scanner(System.in);
         int gotNumber = 0;
         do{
             gotNumber= scanner.nextInt();
@@ -39,7 +45,5 @@ public class test {
                 }
             }
         }
-
-
     }
 }
