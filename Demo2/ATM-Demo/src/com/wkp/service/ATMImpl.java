@@ -190,14 +190,18 @@ public class ATMImpl implements ATM {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 try(Connection conn = DriverManager.getConnection(URL,USER_NAME,USER_PASSWORD)){
                     String sql = "update users set money = ? where card_id = ?;";
-                    try(PreparedStatement ps = conn.prepareStatement(sql)){
-                        usingAccount.setMoney(usingAccount.getMoney().subtract(targetMoney));
-                        ps.setObject(1,usingAccount.getMoney());
-                        ps.setObject(2,usingAccount.getCardId());
+                    try(PreparedStatement p = conn.prepareStatement("begin;")){
+                        try(PreparedStatement ps = conn.prepareStatement(sql)){
+                            usingAccount.setMoney(usingAccount.getMoney().subtract(targetMoney));
+                            ps.setObject(1,usingAccount.getMoney());
+                            ps.setObject(2,usingAccount.getCardId());
+                        }
+                        try(PreparedStatement ps = conn.prepareStatement(sql)){
+                            ps.setObject(1,targetAccount.getMoney().add(targetMoney));
+                            ps.setObject(2,targetAccount.getCardId());
+                        }
                     }
-                    try(PreparedStatement ps = conn.prepareStatement(sql)){
-                        ps.setObject(1,targetAccount.getMoney().add(targetMoney));
-                        ps.setObject(2,targetAccount.getCardId());
+                    try(PreparedStatement p = conn.prepareStatement("commit;")){
                     }
                     try(BufferedWriter writer = new BufferedWriter(new FileWriter("bills.txt"))){
                         String record = LocalDateTime.now()+"\r\n"+usingAccount.getName()+":"+usingAccount.getCardId()+"向"+
