@@ -265,7 +265,7 @@ Document Object Model 文档对象模型
 - Image：<img>
 - Button：<input type = 'button'>
 
-HTML种的Element对象可以通过Document对象获取，而Document对象是通过window对象获取的
+HTML中的Element对象可以通过Document对象获取，而Document对象是通过window对象获取的
 
 Document对象中提供了以下获取Element对象的函数：
 
@@ -315,14 +315,179 @@ Document对象中提供了以下获取Element对象的函数：
 
 ## 常见事件
 
-| 事件名        | 事件内容                 |
-| ------------- | ------------------------ |
-| onclick       | 鼠标单击事件             |
-| onblur        | 元素失去焦点             |
-| onfocus       | 元素获得焦点             |
-| onload        | 某个页面或图像被完成加载 |
-| onsubmit      | 当表单提交时触发该事件   |
-| onkeydown1029 | 某个键盘的键被按下       |
-| onmouseover   | 鼠标被移到某元素之上     |
-| onmouseout    | 鼠标从某元素移开         |
+| 事件名      | 事件内容                 |
+| ----------- | ------------------------ |
+| onclick     | 鼠标单击事件             |
+| onblur      | 元素失去焦点             |
+| onfocus     | 元素获得焦点             |
+| onload      | 某个页面或图像被完成加载 |
+| onsubmit    | 当表单提交时触发该事件   |
+| onkeydown   | 某个键盘的键被按下       |
+| onmouseover | 鼠标被移到某元素之上     |
+| onmouseout  | 鼠标从某元素移开         |
+
+# Vue
+
+- 一套前端框架，免除元素JS中的DOM操作，简化书写
+- 基于MVVM（Model-View-ViewModel）的思想，实现数据的双向绑定，将编程的关注点放在数据上
+
+<img src=""></img>
+
+## 案例1
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- <input type="text"  v-model="message">
+        {{message}} -->
+        <a v-bind:href="url">链接1</a>
+        <a :href="url">链接2</a>
+        <input type="text" v-model="url">
+    </div>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            message:"Hello Vue",
+            url:"https://www.baidu.com",
+        }
+    })
+</script>
+</body>
+</html>
+```
+
+## 常用指令
+
+HTML标签上带有-v前缀的特殊属性
+
+| 指令      | 作用                                                  |
+| --------- | ----------------------------------------------------- |
+| v-bind    | 为HTML标签绑定属性值，如设置href，css样式等           |
+| v-model   | 在表单元素上创建双向数据绑定                          |
+| v-on      | 为HTML标签绑定事件                                    |
+| v-if      | 条件性地渲染某元素，判定为true时渲染，否则不渲染      |
+| v-else-if | 条件性地渲染某元素，判定为true时渲染，否则不渲染      |
+| v-else    | 条件性地渲染某元素，判定为true时渲染，否则不渲染      |
+| v-show    | 条件性地展示某元素，实质是通过修改该标签的display属性 |
+| v-for     | 列表渲染，遍历容器的元素或者对象的属性                |
+
+v-bind有简化写法，见案例1
+
+v-model示例见案例1
+
+## 案例2
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app" v-model="users">
+        <table border="1" cellspacing="0" width="60%">
+            <tr>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>成绩</th>
+                <th>等级</th>
+            </tr>
+            <tr align="center" v-for="(user, index) in users">
+                <td>{{index+1}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.age}}</td>
+                <td>
+                    <span v-if="user.gender==1">男</span>
+                    <span v-else-if="user.gender==2">女</span>
+                </td>
+                <td>{{user.score}}</td>
+                <td>
+                    <span v-if="user.score>=80">优秀</span>
+                    <span v-else-if="user.score>=60">及格</span>
+                    <span v-else>不及格</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>    
+<script>     
+    new Vue({   
+            el:"#app",
+            data:{
+                users:[{
+                    name:"Tom",
+                    age:20,
+                    gender:1,
+                    score:78,
+                },{
+                    name:"Rose",
+                    age:18,
+                    gender:2,
+                    score:86,
+                },{
+                    name:"Jerry",
+                    age:26,
+                    gender:1,
+                    score:90,
+                },{
+                    name:"Tony",
+                    age:30,
+                    gender:1,
+                    score:56,
+                }]
+            }
+        })
+    </script>
+</html>
+```
+
+## Vue对象的生命周期
+
+| 状态          | 阶段周期     |
+| ------------- | ------------ |
+| beforeCreate  | 创建前       |
+| created       | 创建后       |
+| beforeMount   | 挂载前       |
+| mounted       | **挂载完成** |
+| beforeUpdate  | 更新前       |
+| updated       | 更新后       |
+| beforeDestroy | 销毁前       |
+| destroyed     | 销毁后       |
+
+每出发一个生命周期事件，会自动执行一个生命周期方法（钩子）
+
+mounted：挂载完成，Vue初始化成功，HTML页面渲染成功（发送请求到服务端，加载数据）
+
+```
+<script>     
+    new Vue({   
+            el:"#app",
+            data:{
+                users:[{
+                    name:"Tom",
+                    age:20,
+                    gender:1,
+                    score:78,
+                }]
+            },
+            mounted() {
+              console.log("Vue挂载完毕，发送请求获取数据");  
+            },
+        })
+    </script>
+```
 
