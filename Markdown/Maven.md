@@ -4,9 +4,11 @@
 
 通过一小段信息来管理项目。
 
+Maven的安装：https://github.com/wang-kaopu/JavaDemo/blob/main/Markdown/Pic/Maven/maven%E7%9A%84%E5%AE%89%E8%A3%85.png?raw=true
+
 POM的交互过程如图：
 
-<img>
+https://github.com/wang-kaopu/JavaDemo/blob/main/Markdown/Pic/Maven/pom.png?raw=true
 
 仓库：
 
