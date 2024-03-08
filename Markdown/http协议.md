@@ -30,6 +30,8 @@ HTTP特点：
 
 ### 请求数据格式
 
+<img>https://github.com/wang-kaopu/JavaDemo/blob/main/Markdown/Pic/HTTP%E5%8D%8F%E8%AE%AE/http%E8%AF%B7%E6%B1%82%E6%A0%BC%E5%BC%8F.png?raw=true </img>
+
 1. 请求行：
 
 - 请求方式
