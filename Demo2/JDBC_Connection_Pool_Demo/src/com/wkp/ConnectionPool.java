@@ -92,7 +92,6 @@ public class ConnectionPool implements ConnectionPoolDao{
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     public DataSourceConfig getConfig() {

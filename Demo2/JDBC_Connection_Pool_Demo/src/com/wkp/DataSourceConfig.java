@@ -100,15 +100,8 @@ public class DataSourceConfig {
                 Method method = this.getClass().getMethod(fieldName, field.getType());
                 method.invoke(this, prop.get(o));
             }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (NoSuchFieldException e) {
-            throw new RuntimeException(e);
-        } catch (NoSuchMethodException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        } catch (InvocationTargetException e) {
+        } catch (IOException | NoSuchFieldException | IllegalAccessException | NoSuchMethodException |
+                 InvocationTargetException e) {
             throw new RuntimeException(e);
         }
     }

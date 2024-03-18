@@ -5,18 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="edfb971e-a2ab-495c-86a8-aed29f2704c8" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/JavaSceneConfigState.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC_Connection_Pool_Demo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/wkp/ConnectionPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/wkp/ConnectionPoolDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/wkp/ConnectionPoolManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/wkp/DataSourceConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/wkp/PoolEntry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/wkp/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/db.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/mysql-connector-j-8.3.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JDBC_Connection_Pool_Demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JDBC_Connection_Pool_Demo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/wkp/DataSourceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wkp/DataSourceConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Markdown/反射.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Markdown/反射.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,10 +31,10 @@
     <setting file="jar://$PROJECT_DIR$/../../../../../Develop/JDK/lib/src.zip!/java.base/java/lang/Object.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$PROJECT_DIR$/../../../../../Develop/JDK/lib/src.zip!/java.base/java/util/Properties.java" root0="SKIP_INSPECTION" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2btGcNZQhxLxwLq36Sg68fPvWaK" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -57,6 +50,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Code/WinterVaction2024/JavaDemo/Demo2/JDBC_Connection_Pool_Demo/lib",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -64,6 +58,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Code\WinterVaction2024\JavaDemo\Demo2\JDBC_Connection_Pool_Demo\lib" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -73,6 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1707027041320</updated>
       <workItem from="1707027042273" duration="7305000" />
+      <workItem from="1710763013615" duration="2215000" />
     </task>
     <servers />
   </component>
